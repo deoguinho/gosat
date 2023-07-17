@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "d3110f99-7052-47ce-b615-a8e8e975f72a",
+		"name": "Gosat - teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26309690"
+	},
+	"item": [
+		{
+			"name": "Get offers for CPF",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Key YmFuY29wYW5hdXRvcm91dGVyaG1nOldHaHlmVVNXY0w3bXpQeTdHcXly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"cpf\": \"11111111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev.gosat.org/api/v1/simulacao/credito",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"gosat",
+						"org"
+					],
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"credito"
+					],
+					"query": [
+						{
+							"key": "idAutoPan ",
+							"value": "23032003",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get offers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Key YmFuY29wYW5hdXRvcm91dGVyaG1nOldHaHlmVVNXY0w3bXpQeTdHcXly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"cpf\": \"22222222222\",\r\n      \"instituicao_id\": 2,\r\n      \"codModalidade\": \"56c6dbc9-7109-4a67-953d-4ca2ae6b8051\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev.gosat.org/api/v1/simulacao/oferta",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"gosat",
+						"org"
+					],
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"oferta"
+					],
+					"query": [
+						{
+							"key": "idAutoPan ",
+							"value": "23032003",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get best proposals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"22222222222\",\r\n    \"valorSolicitado\": 6000,\r\n    \"qntParcelas\": 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/person",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"person"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
